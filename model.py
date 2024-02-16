@@ -1,5 +1,4 @@
 import keras
-import tensorflow as tf
 from keras import layers
 
 input_shape = (765,572,3)
@@ -20,7 +19,7 @@ testing_ds = keras.utils.image_dataset_from_directory(
 )
 
 # VGG-16 Instantiation
-model = tf.keras.Sequential([
+model = keras.Sequential([
     layers.Conv2D(input_shape=input_shape, filters=64, kernel_size=kernel_size, padding='same', activation='relu'),
     layers.Conv2D(filters=64, kernel_size=kernel_size, padding='same', activation='relu'),
     layers.MaxPool2D(pool_size=(2, 2), strides=(2,2)),
